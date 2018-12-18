@@ -8,8 +8,12 @@ import { SwUpdate } from '@angular/service-worker';
 })
 export class AppComponent {
   title = 'angular-pwa';
+  update: boolean = false;
 
   constructor(updates: SwUpdate) {
-    updates.available.subscribe()
+    updates.available.subscribe(event => {
+      this.update = true;
+      updates.activateUpdate().then(() => document.location.reload());
+    })
   }
 }
