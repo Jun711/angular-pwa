@@ -10,6 +10,9 @@
           "/index.html",
           "/*.css",
           "/*.js"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/**"
         ]
       }
     }, {
@@ -20,6 +23,18 @@
         "files": [
           "/assets/**"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "chuckNorrisApi",
+      "urls": ["https://api.chucknorris.io/jokes/random"],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 20,
+        "maxAge": "1h",
+        "timeout": "5s"
       }
     }
   ]
