@@ -1,14 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from  'rxjs';
+
+export  interface  Item{
+  name:  string;
+  description:  string;
+  url:  string;
+  html:  string;
+  markdown:  string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+  private  dataURL:  string  =  "https://www.techiediaries.com/api/data.json";
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   gimmeChuckNorris() {
-    return this.http.get('https://api.chucknorris.io/jokes/random')
+    return this.httpClient.get('https://api.chucknorris.io/jokes/random')
+  }
+
+  fetchData():  Observable<Item[]> {
+    return <Observable<Item[]>>this.httpClient.get(this.dataURL);
   }
 }
