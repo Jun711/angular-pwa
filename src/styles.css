@@ -4,7 +4,7 @@ body, html {
     height: calc(100% - 4em);
 }
 body {
-    background: brown;
+    background: lightblue;
     color: #fff;
     text-align: center;
     font-family: 'Supermercado+One';

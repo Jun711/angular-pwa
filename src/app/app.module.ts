@@ -9,6 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatToolbarModule } from  '@angular/material/toolbar';
+import { MatCardModule } from  '@angular/material/card';
+import { MatButtonModule } from  '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +21,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

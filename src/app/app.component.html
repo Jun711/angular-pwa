@@ -1,8 +1,28 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Chuck Norris
   </h1>
 
   <p *ngIf="joke">{{ chuckNorris.value }}</p>
 
+</div> -->
+
+<mat-toolbar  color="primary">
+  <mat-toolbar-row>
+  <span>JS-jargon</span>
+  </mat-toolbar-row>
+  </mat-toolbar>
+  <main>
+  <mat-card *ngFor="let item of items">
+  <mat-card-header>
+  <mat-card-title>{{item.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+  {{item.description}}
+  </mat-card-content>
+  <mat-card-actions>
+  <a  mat-raised-button  href="{{item.url}}"  color="primary">More</a>
+  </mat-card-actions>
+  </mat-card>
+  </main>
